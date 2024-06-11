@@ -1,0 +1,20 @@
+{
+  "name": "langchain-loaders",
+  "version": "1.0.0",
+  "description": "self experimental langchain loaders",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node chat.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@langchain/community": "^0.2.9",
+    "cheerio": "^1.0.0-rc.12",
+    "langchain": "^0.2.5",
+    "mammoth": "^1.7.2",
+    "pdf-parse": "^1.1.1"
+  }
+}
