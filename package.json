@@ -5,12 +5,13 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node chat.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@inquirer/prompts": "^5.0.5",
     "@langchain/community": "^0.2.9",
     "cheerio": "^1.0.0-rc.12",
     "langchain": "^0.2.5",
