@@ -1,23 +1,23 @@
-import { ChromaClient } from 'chromadb'
-
-// import { ProxyAgent, setGlobalDispatcher } from 'undici'
-// const dispatcher = new ProxyAgent({ uri: new URL('http://127.0.0.1:7890').toString() });
-// setGlobalDispatcher(dispatcher);
+import { ChromaClient, OllamaEmbeddingFunction } from 'chromadb'
 
 // docker pull chromadb/chroma 
 // docker run -p 8000:8000 chromadb/chroma 
 const client = new ChromaClient();
 
 // https://docs.trychroma.com/integrations/ollama
-// const embedder = new OllamaEmbeddingFunction({
-//   url: "http://127.0.0.1:11434/api/embeddings",
-//   model: "nomic-embed-text"
-// });
+const embedder = new OllamaEmbeddingFunction({
+  url: "http://127.0.0.1:11434/api/embeddings",
+  model: "nomic-embed-text",
+  metadata: { "hnsw:space": "cosine" }, // valid options are "l2", "ip, "or "cosine".
+});
 
 const collection = await client.getOrCreateCollection({
   name: "my_collection",
-  // embeddingFunction: embedder
+  embeddingFunction: embedder
 });
+
+// console.log(await collection.peek()); // returns a list of the first 10 items in the collection
+// console.log(await collection.count());
 
 await collection.upsert({
   documents: [
