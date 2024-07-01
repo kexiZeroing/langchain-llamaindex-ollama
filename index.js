@@ -9,14 +9,19 @@ const answer = await select({
       value: 'chat',
     },
     {
-      name: 'rag',
-      value: 'rag',
+      name: 'langchain-rag',
+      value: 'langchain-rag',
+    },
+    {
+      name: 'llamaindex-rag',
+      value: 'llamaindex-rag',
     }
   ],
 });
 
 // Share the standard input, output, and error streams between the parent and the child processes.
-const child = spawn('node', [`src/${answer}.js`], { stdio: 'inherit' });
+const dir = `${answer.split('-').join('/')}`;
+const child = spawn('node', [`src/${dir}.js`], { stdio: 'inherit' });
 
 child.on('close', (code) => {
   console.log(`Child process exited with code ${code}`);
