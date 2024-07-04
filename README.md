@@ -7,4 +7,6 @@ The LangChain libraries themselves are made up of several different packages:
 
 LlamaIndex.TS offers the core features of LlamaIndex for popular runtimes like Node.js (18, 20, 22), Deno, Bun, and Cloudflare Workers.
 
-TODO: use Vercel AI SDK https://github.com/nicoalbanese/ai-sdk-fundamentals
+TODO:
+- Vercel AI SDK https://github.com/nicoalbanese/ai-sdk-fundamentals
+- Chrome AI: https://github.com/jeasonstudio/chrome-ai
