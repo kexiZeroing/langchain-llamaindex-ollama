@@ -1,7 +1,8 @@
 // https://github.com/sgomez/ollama-ai-provider
 
-import { generateText, streamText, embedMany } from 'ai'
+import { generateText, streamText, streamObject, embedMany } from 'ai'
 import { ollama } from 'ollama-ai-provider'
+import { z } from 'zod'
 
 async function main() {
   // const { text } = await generateText({
@@ -21,6 +22,23 @@ async function main() {
   }
 
   console.log('Token usage:', await result.usage)
+
+  // const { partialObjectStream } = await streamObject({
+  //   model: ollama('gemma:2b'),
+  //   schema: z.object({
+  //     recipe: z.object({
+  //       name: z.string(),
+  //       ingredients: z.array(z.string()),
+  //       steps: z.array(z.string()),
+  //     }),
+  //   }),
+  //   prompt: 'Generate a pasta recipe.',
+  // });
+  
+  // for await (const partialObject of partialObjectStream) {
+  //   console.clear();
+  //   console.log(partialObject);
+  // }
 
   console.log('Generating embeddings...')
   generateEmbeddings(`
