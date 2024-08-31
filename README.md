@@ -9,3 +9,4 @@ LlamaIndex.TS offers the core features of LlamaIndex for popular runtimes like N
 
 - Vercel AI SDK: https://github.com/nicoalbanese/ai-sdk-fundamentals
 - Chrome AI: https://github.com/jeasonstudio/chrome-ai
+- Self-hosted Ollama app on Fly.io: https://github.com/fly-apps/self-host-ollama
