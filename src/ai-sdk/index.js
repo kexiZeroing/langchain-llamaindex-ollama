@@ -21,7 +21,7 @@ async function main() {
     process.stdout.write(textPart)
   }
 
-  console.log('Token usage:', await result.usage)
+  console.log('\n\nToken usage:', await result.usage)
 
   // const { partialObjectStream } = await streamObject({
   //   model: ollama('gemma:2b'),
